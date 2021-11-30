@@ -33,7 +33,7 @@
 
   - ### Prepare our environment and [settings.py](https://github.com/SerjMartin/Funakoshi-Club/blob/main/funakoshi/settings.py) files
     In the project's [settings.py](https://github.com/SerjMartin/Funakoshi-Club/blob/main/funakoshi/settings.py) add the app name in "INSTALET_APP".
-    Create the [env.py](https://github.com/SerjMartin/Funakoshi-Club/blob/main/funakoshi/env_sample.py) file to store the URL from DATABASE, CLAUDINARY and SECRET_KEY then add them in the Heroku "Config Vars".
+    Create the [env.py](https://github.com/SerjMartin/Funakoshi-Club/blob/main/env_sample.py) file to store the URL from DATABASE, CLAUDINARY and SECRET_KEY then add them in the Heroku "Config Vars".
 
   - ### Get our static and media files stored on Cloudinary
     In the project's [settings.py](https://github.com/SerjMartin/Funakoshi-Club/blob/main/funakoshi/settings.py) by adding followings lines (STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
