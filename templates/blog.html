@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row">
+        <!--blog entries column-->
+        <div class="col-12 mt-3 left">
+            {% for post in post_list %}
+            <div class="col-md-4">
+                <div class="card-md-4">
+                    <div class="card-body">
+                        <div class="image-container">
+                            {% if "placeholder" in post.featured_image.url %}
+                            <img class="card-img-top"
+                                src="https://i1.wp.com/www.fskabracknell.co.uk/wp-content/uploads/2015/06/funakoshi-1-1-1.jpg?fit=913%2C1024">
+                            {% else %}
+                            <img class="card-img-top" src=" {{ post.featured_image.url }}">
+                            {% endif %}
+                            <div class="image-flash">
+                                <p class="author">Author: {{ post.author }}</p>
+                            </div>
+                        </div>
+                        <a href="#" class="post-link">
+                            <h2 class="card-title">{{ post.title }}</h2>
+                            <p class="card-text">{{ post.excert }}</p>
+                        </a>
+                        <hr />
+                        <p class="card-text text-muted h6">{{ post.created_on }} <i class="far fa-thumbs-up"></i></p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

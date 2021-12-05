@@ -20,4 +20,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # Add summernote url
     path('summernote/', include('django_summernote.urls')),
+    path('blog.html/', include('blog.urls'), name='blog_urls'),
 ]
