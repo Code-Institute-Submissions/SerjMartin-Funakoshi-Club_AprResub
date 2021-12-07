@@ -18,6 +18,8 @@
 ### Existing Features
 
 ## Technologies Used
+ For the account registration used Django-allauth library
+ For the feature images and CSS support used the Cloudinary library
 
 ## Testing
 
