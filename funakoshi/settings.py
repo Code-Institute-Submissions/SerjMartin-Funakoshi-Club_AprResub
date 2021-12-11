@@ -88,6 +88,12 @@ TEMPLATES = [
     },
 ]
 
+AUTHENTICATION_BACKEND = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
+
 WSGI_APPLICATION = 'funakoshi.wsgi.application'
 
 
