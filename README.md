@@ -1,4 +1,4 @@
-# Glam Dolls
+# Funakoshi club
 ## About
 
 ## Table of Contents
@@ -18,8 +18,10 @@
 ### Existing Features
 
 ## Technologies Used
- For the account registration used Django-allauth library
- For the feature images and CSS support used the Cloudinary library
+ - For the account registration used Django-allauth library
+ - For the feature images and CSS support used the Cloudinary library
+ - For the comments used Crispy forms library
+ - For the login/logout templates used default account templates from Allauth library
 
 ## Testing
 
