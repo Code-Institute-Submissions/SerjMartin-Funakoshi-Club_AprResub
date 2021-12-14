@@ -33,7 +33,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = ['funakoshiclub.herokuapp.com', 'localhost']
-
+# 'funakoshiclub.herokuapp.com', 'localhost'
 
 # Application definition
 
