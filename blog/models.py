@@ -45,7 +45,7 @@ class Comment(models.Model):
     email = models.EmailField()
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
-    approved = models.BooleanField(default=False)
+    approved = models.BooleanField(default=True)
     likes = models.ManyToManyField(User, related_name='comment_likes', blank=True)
 
     class Meta:

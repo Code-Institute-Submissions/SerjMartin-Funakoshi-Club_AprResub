@@ -18,7 +18,7 @@ class PostList(generic.ListView):
 
 class PostDetail(View):
     """
-    Create view to display post details
+    Create view to display post details .filter(approved=True).filter(status=1)
     """
     def get(self, request, slug, *args, **kwargs):
         quryset = Post.objects.filter(status=1)
@@ -34,7 +34,7 @@ class PostDetail(View):
             {
                 "post": post,
                 "comments": comments,
-                "commented": False,
+                # "commented": False,
                 "liked": liked,
                 "comment_form": CommentForm(),
             },
@@ -58,7 +58,7 @@ class PostDetail(View):
             comment_form.save()
             messages.success(request, 'Your comment is successfully submited.')
         else:
-            # return empty form
+
             comment_form = CommentForm()
 
         return render(
@@ -67,7 +67,7 @@ class PostDetail(View):
             {
                 "post": post,
                 "comments": comments,
-                "commented": True,
+                # "commented": True,
                 "liked": liked,
                 "comment_form": CommentForm(),
             },
