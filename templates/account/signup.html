@@ -5,16 +5,13 @@
 {% block head_title %}{% trans "Signup" %}{% endblock %}
 
 {% block content %}
-<div class="conteiner mb-5 mt-5">
-  <div class="row">
-    <div class="col-md-8 mt-3 offset-md-2">
+<div class="row bg-white">
+  <div class="col-md-6 pt-5">
+    <div class="mt-5 offset-md-4">
       <h1>{% trans "Sign Up" %}</h1>
-
       <p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-md-8 mt-3 offset-md-2">
+    <div class="mt-5 offset-md-4">
       <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
         {% csrf_token %}
         {{ form.as_p }}
@@ -24,6 +21,9 @@
         <button type="submit" class="mb-5 right">{% trans "Sign Up" %} &raquo;</button>
       </form>
     </div>
+  </div>
+  <div class="col-4 m-5">
+    <img src="https://i1.wp.com/www.fskabracknell.co.uk/wp-content/uploads/2015/06/funakoshi-1-1-1.jpg?fit=913%2C1024" class="img-fluid" alt="shotokan">
   </div>
 </div>
 
