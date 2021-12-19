@@ -3,88 +3,83 @@
 {% block content %}
 
 {% load crispy_forms_tags %}
-
-<div class="masthead">
-    <div class="container">
-        <div class="row g-0">
-            <div class="col-md-6 masthead-text">
-                <h1 class="post-title">{{ post.title }}</h1>
-                <p class="post-subtitle">{{ post.author }} | {{ post.created_on }}</p>
-            </div>
-            <div class="d-none d-md-block col-md-6 masthead-image">
-                {% if "placeholder" in post.featured_image.url %}
-                <img src="https://www.azquotes.com/picture-quotes/quote-only-through-training-will-a-person-learn-his-own-weaknesses-he-who-is-aware-of-his-gichin-funakoshi-124-23-94.jpg" width="100%">
-                {% else %}
-                <img src="{{ post.featured_url }}" width="100%">
-                {% endif %}
+<div class="container-fluid">
+    <div class="container-fluid bg-white border">
+        <div class="container-fluid pt-4">
+            <div class="row g-0">
+                <div class="d-none d-md-block col me-5">
+                    {% if "placeholder" in post.featured_image.url %}
+                    <img src="https://www.azquotes.com/picture-quotes/quote-only-through-training-will-a-person-learn-his-own-weaknesses-he-who-is-aware-of-his-gichin-funakoshi-124-23-94.jpg" width="100%">
+                    {% else %}
+                    <img src="{{ post.featured_url }}" width="100%">
+                    {% endif %}
+                </div>
+                <div class="col-6 ps-5">
+                    <h1><u>{{ post.title }}</u></h1>
+                    <p>{{ post.author }} | {{ post.created_on }}</p>
+                </div>
             </div>
         </div>
-    </div>
-</div>
+        <div class="row">
+            <div class="col card border mt-4">
+                <div class="card-body">
+                    <p class="card-text ">{{ post.content | safe }}</p>
+                    <div class="row">
 
-<div class="container">
-    <div class="row">
-        <div class="col card mb-4  mt-3 left  top">
-            <div class="card-body">
-                <p class="card-text ">{{ post.content | safe }}</p>
-                <div class="row">
-
-                    <div class="col-1">
-                        <strong>
-                            <!--allowing to like the post only if the user is authentic-->
-                            {% if user.is_authenticated %}
-                            <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
-                                {% csrf_token %}
-                                {% if liked %}
-                                <button type="submit" name="blogpost" value="{{post.slug}}" class="btn-like">
-                                    <i class="fas fa-heart"></i>
-                                </button>
+                        <div class="col-1">
+                            <strong>
+                                <!--allowing to like the post only if the user is authentic-->
+                                {% if user.is_authenticated %}
+                                <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
+                                    {% csrf_token %}
+                                    {% if liked %}
+                                    <button type="submit" name="blogpost" value="{{post.slug}}" class="btn-like">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                    {% else %}
+                                    <button type="submit" name="blogpost" value="{{post.slug}}" class="btn-like">
+                                        <i class="far fa-heart"></i>
+                                    </button>
+                                    {% endif %}
+                                </form>
                                 {% else %}
-                                <button type="submit" name="blogpost" value="{{post.slug}}" class="btn-like">
-                                    <i class="far fa-heart"></i>
-                                </button>
+                                <span class="text-secondary"><i class="far fa-heart"></i></span>
                                 {% endif %}
-                            </form>
-                            {% else %}
-                            <span class="text-secondary"><i class="far fa-heart"></i></span>
-                            {% endif %}
-                            <span class="text-secondary">{{ post.number_of_likes }}</span>
-                        </strong>
-                    </div>
-                    <div class="col-1">
-                        {% with comments.count as total_comments %}
-                        <strong class="text-secondary"><i class="far fa-comments"></i>
-                            {{ total_comments }}
-                        </strong>
-                        {% endwith %}
+                                <span class="text-secondary">{{ post.number_of_likes }}</span>
+                            </strong>
+                        </div>
+                        <div class="col-1">
+                            {% with comments.count as total_comments %}
+                            <strong class="text-secondary"><i class="far fa-comments"></i>
+                                {{ total_comments }}
+                            </strong>
+                            {% endwith %}
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <hr>
     <div class="row">
-        <div class="col">
-            <hr>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-8 card mb-4  mt-3 ">
-            <h3>Comments:</h3>
+        <div class="col-md-8 card mb-2">
+            <h3 class="text-center"><u>Comments:</u></h3>
             <div class="card-body">
                 {% for comment in comments %}
                 <div class="comments" style="padding: 10px;">
                     <p class="font-weight-bold">
-                        {{ comment.name }}
+                        <u>{{ comment.name }}</u> |
                         <span class=" text-muted font-weight-normal">
                             {{ comment.created_on }}
-                        </span> wrote:
+                        </span><br> wrote:
                     </p>
                     {{ comment.body | linebreaks }}
                 </div>
+                <hr>
                 {% endfor %}
             </div>
         </div>
-        <div class="col-md-4 card mb-4  mt-3 ">
+        <div class="col-md-4 card mb-2">
             <div class="card-body">
                 <!--{% if commented %}
                 <div class="alert alert-success" role="alert">
@@ -92,12 +87,14 @@
                 </div>
                 {% else %}-->
                 {% if user.is_authenticated %}
-                <h3>Leave a comment:</h3>
-                <p>Posting as: {{ user.username }}</p>
+                <h3 class="text-center"><u>Leave a comment:</u></h3>
+                <p class="text-center">Posting as: {{ user.username }}</p>
                 <form method="post" class="comment-form">
                     {{ comment_form | crispy }}
                     {% csrf_token %}
-                    <button type="submit" class="btn btn-signup btn lg">Submit</button>
+                    <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-secondary border mt-2">Submit</button>
+                    </div>
                 </form>
                 {% endif %}
                 {% endif %}
