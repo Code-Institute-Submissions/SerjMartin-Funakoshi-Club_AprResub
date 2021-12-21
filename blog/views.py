@@ -89,11 +89,3 @@ class PostLike(View):
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
-
-"""
-class CommentLike(View):
-
-    def comment_likes(view):
-
-        return HttpResponseRedirect('post_detail', args=[view])
-"""

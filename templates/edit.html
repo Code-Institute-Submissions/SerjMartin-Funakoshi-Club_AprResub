@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block content %}
+<div class="row bg-white">
+  <div class="col-md-6 pt-5">
+    <div class="mt-5 offset-md-4">
+      <h1>
+        Edit your comment.
+      </h1>
+    </div>
+    <div class="mt-5 offset-md-4">
+      <p class="text-center">Posting as: {{ user.username }}</p>
+      <form method="post" class="comment-form">
+        {{ comment_form | crispy }}
+        {% csrf_token %}
+        <div class="d-grid gap-2">
+        <button type="edit" class="btn btn-secondary border mt-2">Edit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="col-4 m-5">
+    <img src="https://i1.wp.com/www.fskabracknell.co.uk/wp-content/uploads/2015/06/funakoshi-1-1-1.jpg?fit=913%2C1024" class="img-fluid" alt="shotokan">
+  </div>
+</div>
+
+{% endblock %}
