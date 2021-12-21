@@ -1,35 +1,35 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-12 mt-3 left">
-            {% for post in post_list %}
-            <div class="col-md-4">
-                <div class="card-md-4">
-                    <div class="card-body">
-                        <div class="image-container">
-                            {% if "placeholder" in post.featured_image.url %}
-                            <img class="card-img-top img-thumbnail"
-                                src="https://i1.wp.com/www.fskabracknell.co.uk/wp-content/uploads/2015/06/funakoshi-1-1-1.jpg?fit=913%2C1024">
-                            {% else %}
-                            <img class="card-img-top" src=" {{ post.featured_image.url }}">
-                            {% endif %}
-                            <div class="image-flash">
-                                <p class="author">Author: {{ post.author }}</p>
-                            </div>
-                        </div>
-                        <a href="{% url 'post_detail' post.slug %}" class="post-link">
-                            <h2 class="card-title">{{ post.title }}</h2>
-                            <p class="card-text">{{ post.excert }}</p>
-                        </a>
-                        <hr/>
-                        <p class="card-text text-muted h6">{{ post.created_on }} <i class="far fa-heart"></i></p>
+<div class="container-fuid ">
+
+
+    {% for post in post_list %}
+    <div class="card mb-3">
+        <div class="row">
+            <div class="col-3 border p-3">
+                {% if "placeholder" in post.featured_image.url %}
+                <img class="img-fluid"
+                    src="https://i1.wp.com/www.fskabracknell.co.uk/wp-content/uploads/2015/06/funakoshi-1-1-1.jpg?fit=913%2C1024">
+                {% else %}
+                <img class="img-fluid" src=" {{ post.featured_image.url }}">
+                {% endif %}
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <div>
+                        <p>Author: {{ post.author }}</p>
                     </div>
+                    <a href="{% url 'post_detail' post.slug %}" class="post-link">
+                    <h2 class="card-title">{{ post.title }}</h2>
+                    <p class="card-text">{{ post.excert }}</p>
+                    </a>
+                    <hr/>
+                    <p class="card-text text-muted h6">{{ post.created_on }} <i class="far fa-heart"></i></p>
                 </div>
             </div>
-            {% endfor %}
         </div>
     </div>
+    {% endfor %}
 </div>
 {% endblock %}

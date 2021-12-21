@@ -11,7 +11,7 @@
                     {% if "placeholder" in post.featured_image.url %}
                     <img src="https://www.azquotes.com/picture-quotes/quote-only-through-training-will-a-person-learn-his-own-weaknesses-he-who-is-aware-of-his-gichin-funakoshi-124-23-94.jpg" width="100%">
                     {% else %}
-                    <img src="{{ post.featured_url }}" width="100%">
+                    <img src="{{ post.featured_image.url}}" width="100%">
                     {% endif %}
                 </div>
                 <div class="col-6 ps-5">
