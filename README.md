@@ -1,9 +1,9 @@
 # Funakoshi club
 ## About
+Funakoshi Club is a very friendly website for all people who practise Shotokan Karate or those who want to take an interest in it. This website has a few different functions, you can read a bit about the history of Shotokan Karate on the home page, you can find links to suggested books from different websites on the Books Library page. We also have a blog to share your thoughts, experiences and view other people's, ability to book your place at the seminars. to use the blog you have to create an account. Ability to book your place at the seminars.
 
 ## Table of Contents
   - [How to use](#how-to-use)
-  - [Project idea](#project-idea)
   - [Features](#features)
   - [Technologies Used](#technologies-used)
   - [Testing](#testing)
@@ -11,7 +11,6 @@
   - [Acknowledgement](#acknowledgement)
 ## How to use
 
-## Project idea
 
 ## Features
 

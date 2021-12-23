@@ -76,8 +76,12 @@
                     {{ comment.body | linebreaks }}
 
                 </div>
-                <button type="delete">Delete &raquo;</button>
-                <button type="edit">Edit &raquo;</button>
+                <a href="{% url 'edit_comment' post.slug %}" class="post-link">
+                <button type="delete">Edit &raquo;</button>
+                </a>
+                <a href="{% url 'delete_comment' post.slug %}" class="post-link">
+                <button type="edit">Delete &raquo;</button>
+                </a>
                 <hr>
                 {% endfor %}
             </div>

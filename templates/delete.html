@@ -3,6 +3,7 @@
 {% load i18n %}
 
 {% block content %}
+{% load crispy_forms_tags %}
 <div class="row bg-white">
   <div class="col-md-6 pt-5">
     <div class="mt-5 offset-md-4">
@@ -10,7 +11,9 @@
     </div>
     <div class="mt-5 offset-md-4">
       <form class="delete" method="post" action="#">
-        <button type="delete" class="mb-5">Delete &raquo;</button>
+        {% csrf_token %}
+        {{ comment_form | crispy }}
+        <button type="delete" class="btn btn-secondary border mt-2">Delete &raquo;</button>
       </form>
     </div>
   </div>

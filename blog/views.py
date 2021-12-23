@@ -3,7 +3,7 @@ from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.contrib import messages
 # Import Post model from models.py
-from .models import Post
+from .models import Post, Comment
 from .forms import CommentForm
 
 
@@ -72,6 +72,47 @@ class PostDetail(View):
                 "comment_form": CommentForm(),
             },
         )
+
+
+def edit_comment(request, slug):
+        """
+        Editing an existing comment
+        """
+        quryset = Post.objects.filter(status=1)
+        post = get_object_or_404(quryset, slug=slug)
+        comments = post.comments.filter(approved=True).order_by('created_on')
+        comment_form = CommentForm(data=request.POST)
+
+        return render(
+            request,
+            "edit.html",
+            {
+                "comment_form": CommentForm(),
+                "comments": comments,
+                "post": post,
+            },
+        )
+
+
+def delete_comment(request, slug):
+    """
+    Delete an existing Comment
+    """
+    quryset = Post.objects.filter(status=1)
+    post = get_object_or_404(quryset, slug=slug)
+    comments = post.comments.filter(approved=True).order_by('created_on')
+    comment_form = CommentForm(data=request.POST)
+
+    return render(
+            request,
+            "delete.html",
+            {
+                "comment_form": CommentForm(),
+                "comments": comments,
+                "post": post,
+            }
+        )
+
 
 
 class PostLike(View):
