@@ -3,13 +3,11 @@
 Funakoshi Club is a very friendly website for all people who practise Shotokan Karate or those who want to take an interest in it. This website has a few different functions, you can read a bit about the history of Shotokan Karate on the home page, you can find links to suggested books from different websites on the Books Library page. We also have a blog to share your thoughts, experiences and view other people's, ability to book your place at the seminars. to use the blog you have to create an account. Ability to book your place at the seminars.
 
 ## Table of Contents
-  - [How to use](#how-to-use)
   - [Features](#features)
   - [Technologies Used](#technologies-used)
   - [Testing](#testing)
   - [Deployment](#deployment)
   - [Acknowledgement](#acknowledgement)
-## How to use
 
 
 ## Features
@@ -18,15 +16,35 @@ Funakoshi Club is a very friendly website for all people who practise Shotokan K
  ### Home
   The home page split into 2 parts from the header and footer
   - ### About
-  ![about](media/about.png)
+  ![About](media/about.png)
 
   This section describes what is about this website and how to use it.
 
   - ### History
   ![History](media/history.png)
+
   This section tells us a little bit of the history of this sport, by who and when was created.
 
-s
+ ### Book library
+ ![Library](media/library.png)
+
+ On this page, we can find recommended karate books and website's links from where we can buy them.
+
+ ### Blog
+ ![Blog](media/blog.png)
+
+ On this page is all posts created with the date, time.
+
+ ### Post Detailes
+ ![Comments](media/leave-comments.png)
+
+ On this page is the post details created by Admin, all the comments left by different users and a section to leave your comment.
+
+
+
+
+
+
 
 ## Technologies Used
  - For the account registration used Django-allauth library
