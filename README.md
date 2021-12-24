@@ -18,9 +18,12 @@ Funakoshi Club is a very friendly website for all people who practise Shotokan K
  ### Home
   The home page split into 2 parts from the header and footer
   - ### About
+  ![about](media/about.png)
+
   This section describes what is about this website and how to use it.
 
   - ### History
+  ![History](media/history.png)
   This section tells us a little bit of the history of this sport, by who and when was created.
 
 s
