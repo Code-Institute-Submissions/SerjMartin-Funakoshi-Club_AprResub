@@ -53,10 +53,11 @@ Funakoshi Club is a very friendly website for all people who practise Shotokan K
 
  ### Libraries
 
-  - For the account registration used Django-allauth library
-  - For the feature images and CSS support used the Cloudinary library
-  - For the comments used Crispy forms library
-  - For the login/logout templates used default account templates from Allauth library
+  - For the account registration used [Django-allauth](https://django-allauth.readthedocs.io/en/latest/) library
+  - For the feature images and CSS support used the [Cloudinary library](https://cloudinary.com/)
+  - For the comments used [Crispy forms](https://django-crispy-forms.readthedocs.io/en/latest/) library
+  - For the login/logout templates used default account templates from [Allauth](https://django-allauth.readthedocs.io/en/latest/) library
+  - For Awesome icons used [Font Awesome](https://fontawesome.com/)
 
  ### Programming languages
 

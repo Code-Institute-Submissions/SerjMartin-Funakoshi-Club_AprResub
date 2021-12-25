@@ -8,6 +8,7 @@
   margin-left: 4%;
 }
 
+
 #home {
   margin-left: 30%;
 }
@@ -33,4 +34,20 @@ footer {
 
 .comment-form {
   margin-top: 1.3em;
+}
+
+@media acreen and (max-width: 992px) {
+
+  .logo {
+    font-size: 300%;
+  }
+
+}
+
+@media screen and (max-width: 576px) {
+
+  .logo {
+    font-size: 200%;
+  }
+
 }
