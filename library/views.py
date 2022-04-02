@@ -13,7 +13,3 @@ def all_books(request):
 
     return render(request, 'library/library.html', context)
 
-
-# def library(request):
-
-#     return render(request, 'library.html')
