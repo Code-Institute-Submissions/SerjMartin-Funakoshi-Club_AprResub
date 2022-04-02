@@ -1,6 +1,19 @@
 from django.shortcuts import render
+from .models import Book
 
 
-def library(request):
+def all_books(request):
+    """A view to show all books"""
 
-      return render(request, 'library.html')
+    books = Book.objects.all()
+
+    context = {
+        'books': books,
+    }
+
+    return render(request, 'library/library.html', context)
+
+
+# def library(request):
+
+#     return render(request, 'library.html')
