@@ -1,7 +1,8 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 # Import Post model from models.py
 from .models import Post, Comment
 from .forms import CommentForm
@@ -74,47 +75,6 @@ class PostDetail(View):
         )
 
 
-def edit_comment(request, slug):
-        """
-        Editing an existing comment
-        """
-        quryset = Post.objects.filter(status=1)
-        post = get_object_or_404(quryset, slug=slug)
-        comments = post.comments.filter(approved=True).order_by('created_on')
-        comment_form = CommentForm(data=request.POST)
-
-        return render(
-            request,
-            "edit.html",
-            {
-                "comment_form": CommentForm(),
-                "comments": comments,
-                "post": post,
-            },
-        )
-
-
-def delete_comment(request, slug):
-    """
-    Delete an existing Comment
-    """
-    quryset = Post.objects.filter(status=1)
-    post = get_object_or_404(quryset, slug=slug)
-    comments = post.comments.filter(approved=True).order_by('created_on')
-    comment_form = CommentForm(data=request.POST)
-
-    return render(
-            request,
-            "delete.html",
-            {
-                "comment_form": CommentForm(),
-                "comments": comments,
-                "post": post,
-            }
-        )
-
-
-
 class PostLike(View):
     """
     Create method view to display likes
@@ -130,3 +90,49 @@ class PostLike(View):
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
+
+@login_required
+def edit_comment(request, id):
+    """ Edit an existing Post """
+
+    comment = get_object_or_404(Comment, pk=id)
+    if comment.name != request.user.username:
+        messages.error(request, "You can't edit this post")
+        return redirect('blog')
+
+    if request.method == 'POST':
+        comment_form = CommentForm(request.POST, instance=comment)
+        if comment_form.is_valid():
+            comment_form.instance.body = request.POST.get('body')
+            comment_form.save()
+            messages.success(request, 'Successfully updated comment!')
+            return redirect(reverse('post_detail', args=[comment.post.slug]))
+        else:
+            messages.error(
+                request, 'Failed to update comment. check if form is valid.')
+    else:
+        comment_form = CommentForm(instance=comment)
+        print(comment_form)
+        messages.info(request, 'You are editing this comment')
+    template = 'edit.html'
+    context = {
+        # 'post': post,
+        'comment_form': comment_form,
+    }
+
+    return render(request, template, context)
+
+
+@login_required
+def delete_comment(request, id):
+    """ Create method view to display likes """
+
+    comment = get_object_or_404(Comment, pk=id)
+    if comment.name != request.user.username:
+        messages.error(request, "You can't delete this post")
+        return redirect('blog')
+
+    comment.delete()
+    messages.success(request, 'Comment deleted')
+
+    return redirect(reverse('post_detail', args=[comment.post.slug]))
