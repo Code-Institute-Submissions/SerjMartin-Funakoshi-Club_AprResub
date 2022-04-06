@@ -10,7 +10,6 @@ Funakoshi Club is a very friendly website for all people who practise Shotokan K
 ![Responsice Mockup](media/image1.png)
 
 ## Table of Contents
-  - [Business Goals](#business-goals)
   - [User goals](#User-goals)
   - [Features](#features)
   - [Technologies Used](#technologies-used)
@@ -19,7 +18,7 @@ Funakoshi Club is a very friendly website for all people who practise Shotokan K
   - [Deployment](#deployment)
   - [Acknowledgement](#acknowledgement)
 
-
+## User Stores
 
 ## Features
 
@@ -75,14 +74,58 @@ __Balsmiq Wireframe__
 
  ### Programming languages
 
-  - HTML
-  - CSS
-  - Java Script
-  - Python
+- [HTML](https://www.w3schools.com/html/default.asp)
+- [CSS](https://www.w3schools.com/css/default.asp)
+- [Java Script](https://www.w3schools.com/js/default.asp)
+- [Python](https://www.w3schools.com/python/default.asp)
 
  ### Framewoks
    - [Django](https://www.djangoproject.com/) - Django is a high-level Python Web framework that encourages rapid development and clean design.
    - [Boostrap](https://getbootstrap.com/) - Bootstrap is a web framework that focused on simplifying the development of an informative web page.
+
+
+### Database
+Used [SQL](https://www.w3schools.com/sql/default.asp) database by default.
+
+- Library app
+
+| Name | Key | Type | Extra Info |
+| :--------------: | :----------------: | :--------------: | :----------------: |
+| Name | name | CharField | max_length=254 |
+| Writer | writer | CharField | max_length=254 |
+| Description | description | TextField |  |
+| Link | link | CharField | max_length=600 |
+
+
+
+- Blog App (Post)
+
+| Name | Key | Type | Extra Info |
+| :--------------: | :----------------: | :--------------: | :----------------: |
+| Title | title | CharField | max_length=200, unique=True |
+| Slug | slug | SlugField | max_length=200, unique=True |
+| Author | author | ForeignKey | User, on_delete=models.CASCADE, related_name="blog_post" |
+| Updated On | updated_on | DateTimeField | auto_now=True |
+| Content | content | TextField |  |
+| Featured Image | featured_image | CloudinaryField | 'image', default='placeholder' |
+| Excerpt | excerpt | TextField | blank=True |
+| Created On | created_on | DateTimeField | auto_now_add=True |
+| Status | status | IntegerField | choices=STATUS, default=0 |
+| Likes | likes | ManyToManyField | User, related_name='blog_likes', blank=True |
+
+
+- Blog App (Comment)
+
+| Name | Key | Type | Extra Info |
+| :--------------: | :----------------: | :--------------: | :----------------: |
+| Post | post | ForeignKey | Post, on_delete=models.CASCADE, related_name='comments' |
+| Name | name | CharField | max_length=80 |
+| Email |  email | EmailField |  |
+| Body | body  | TextField |  |
+| Created On | created_on | DateTimeField | auto_now_add=True |
+| Approved | approved | BooleanField | default=True |
+| Likes | likes  | ManyToManyField | User, related_name='comment_likes', blank=True |
+
 
 ## Testing
 
