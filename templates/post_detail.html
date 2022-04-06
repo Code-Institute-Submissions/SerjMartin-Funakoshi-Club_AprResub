@@ -10,12 +10,12 @@
                 <div class="d-none d-md-block col me-5">
                     {% if "placeholder" in post.featured_image.url %}
                     <img src="https://www.azquotes.com/picture-quotes/quote-only-through-training-will-a-person-learn-his-own-weaknesses-he-who-is-aware-of-his-gichin-funakoshi-124-23-94.jpg"
-                        width="100">
+                        width="100%">
                     {% else %}
-                    <img src="{{ post.featured_image.url}}" width="100">
+                    <img src="{{ post.featured_image.url}}" width="100%">
                     {% endif %}
                 </div>
-                <div class="col-6 ps-5">
+                <div class="col col-lg-6  col-sm-12 ps-2">
                     <h1><u>{{ post.title }}</u></h1>
                     <p>{{ post.author }} | {{ post.created_on }}</p>
                 </div>
@@ -27,7 +27,7 @@
                     <p class="card-text ">{{ post.content | safe | striptags }}</p>
                     <div class="row">
 
-                        <div class="col-1">
+                        <div class="col col-lg-1 col-sm-3">
 
                             <!--allowing to like the post only if the user is authentic-->
                             {% if user.is_authenticated %}
@@ -49,7 +49,7 @@
                             <span class="text-secondary">{{ post.number_of_likes }}</span>
 
                         </div>
-                        <div class="col-1">
+                        <div class="col col-lg-1 col-sm-3">
                             {% with comments.count as total_comments %}
                             <strong class="text-secondary"><i class="far fa-comments"></i>
                                 {{ total_comments }}
