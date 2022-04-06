@@ -1,10 +1,5 @@
 # Funakoshi club
 
-- #  NOTICE !!!!
-
-This is a notice to inform you that this project has not been completed in relation to my job as a courier
-that gets increasingly busier at this time of year. I did as much as i could but unfortunately, i did not have enough time to finish before the deadline.
-
 
 # About
 Funakoshi Club is a very friendly website for all people who practise Shotokan Karate or those who want to take an interest in it. This website has a few different functions, you can read a bit about the history of Shotokan Karate on the home page, you can find links to suggested books from different websites on the Books Library page. We also have a blog to share your thoughts, experiences and view other people's, ability to book your place at the seminars. to use the blog you have to create an account. Ability to book your place at the seminars.
@@ -15,6 +10,8 @@ Funakoshi Club is a very friendly website for all people who practise Shotokan K
 ![Responsice Mockup](media/image1.png)
 
 ## Table of Contents
+  - [Business Goals](#business-goals)
+  - [User goals](#User-goals)
   - [Features](#features)
   - [Technologies Used](#technologies-used)
   - [Framewoks](#frameworks)
@@ -61,6 +58,12 @@ Funakoshi Club is a very friendly website for all people who practise Shotokan K
 
 
 ## Technologies Used
+
+__Balsmiq Wireframe__
+
+ The Wireframe of this website was built in [Balsamic](https://balsamiq.cloud/)
+
+  ![Wireframe](media/wireframe.png)
 
  ### Libraries
 
@@ -113,5 +116,18 @@ Funakoshi Club is a very friendly website for all people who practise Shotokan K
 
 ### Cloning
 
+If you wish to clone this repository you can follow the following steps below.
+   - Go to the Git Hub website and log in.
+   - Locate the [Repository](https://github.com/SerjMartin/Funakoshi-Club) used for this project.
+   - Under the Repository's name locate the "Code" button.
+   - Either Download the ZIP file, unpackage locally and open with IDE (This route ends here) OR Copy Git URL    from the HTTPS dialogue box.
+   - Open your developement editor of choice and open a terminal window in a directory of your choice.
+   - Use the git clone command in terminal followed by the copied git URL.
+   - A clone of the project will be created locally on your machine.
+Once the project has been loaded into an IDE of choice, run the following command in the shell to install all the required packages: pip install -r requirements.txt.
+
 ## Acknowledgement
+
+  - Thank you to everyone who took their time to provide me with constructive feedback on the Slack community app.
+  - Big thanks to my mentor 'Tim Nelson' for his time to answer all my questions and his professional advice.
 
