@@ -77,8 +77,8 @@
                     {{ comment.body | linebreaks }}
 
                 </div>
-                <a href="{% url 'edit_comment' comment.id %}" class="post-link btn">Edit >></a>
-                <a href="{% url 'delete_comment' comment.id %}" class="post-link btn">Delete >></a>
+                <a href="{% url 'edit_comment' comment.id %}" class="post-link btn btn-outline-secondary text-dark">Edit >></a>
+                <a href="{% url 'delete_comment' comment.id %}" class="post-link btn btn-outline-secondary text-dark">Delete >></a>
                 <hr>
                 {% endfor %}
             </div>
