@@ -7,15 +7,15 @@
     <div class="container-fluid bg-white border">
         <div class="container-fluid pt-4">
             <div class="row g-0">
-                <div class="d-none d-md-block col me-5">
+                <div class="col-lg-6 col-md-12 text-center">
                     {% if "placeholder" in post.featured_image.url %}
                     <img src="https://www.azquotes.com/picture-quotes/quote-only-through-training-will-a-person-learn-his-own-weaknesses-he-who-is-aware-of-his-gichin-funakoshi-124-23-94.jpg"
-                        width="100" alt="post-img">
+                    width="100%" alt="post-img">
                     {% else %}
-                    <img src="{{ post.featured_image.url}}" width="100" alt="user-img">
+                    <img src="{{ post.featured_image.url}}" width="100%" alt="user-img">
                     {% endif %}
                 </div>
-                <div class="col col-lg-6  col-sm-12 ps-2">
+                <div class="col col-lg-6 col-md-12 text-center">
                     <h1><u>{{ post.title }}</u></h1>
                     <p>{{ post.author }} | {{ post.created_on }}</p>
                 </div>
