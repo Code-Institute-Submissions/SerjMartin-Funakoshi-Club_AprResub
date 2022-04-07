@@ -10,7 +10,7 @@ Funakoshi Club is a very friendly website for all people who practise Shotokan K
 ![Responsice Mockup](media/image1.png)
 
 ## Table of Contents
-  - [User goals](#User-goals)
+  - [User Stores](#User-stores)
   - [Features](#features)
   - [Technologies Used](#technologies-used)
   - [Framewoks](#frameworks)
@@ -139,6 +139,30 @@ Used [SQL](https://www.w3schools.com/sql/default.asp) database by default.
 ## Testing
 
  ### Validator Testing
+
+ - HTML code is validated throught [W3 validatdor](https://validator.w3.org/).
+     Result came out as follows.
+
+    - [Home](media/Optimized-index.png)
+    - [Books Libarry](media/Optimized-library-book.png)
+    - [Blog](media/Optimized-blog.png)
+    - [Post Details](media/Optimized-post-detail.png)
+
+  - CSS code is validated throught [W3 Jigsaw](https://jigsaw.w3.org/css-validator/)
+
+     - [Home](media/Optimized-index-css.png)
+     - [Books Libarry](media/Optimized-library-book-css.png)
+     - [Blog](media/Optimized-blog-css.png)
+     - [Post Details](media/Optimized-post-details-css.png)
+
+
+  - JavaScript code is validated throught [JS Hint](https://jshint.com/)
+
+  ![js-validator](media/Optimized-java-script.png)
+
+  - Python code is validated throught [PEP8](http://pep8online.com/)
+
+  ![python-validator](media/Optimized-pyhton.png)
 
 ## Deployment
 
