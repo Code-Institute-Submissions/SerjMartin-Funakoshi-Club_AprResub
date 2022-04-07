@@ -33,19 +33,7 @@ footer {
   margin-top: 1.3em;
 }
 
-@media acreen and (max-width: 992px) {
-
-  .logo {
-    font-size: 300%;
-  }
-
-}
-
 @media screen and (max-width: 576px) {
-
-  .logo {
-    font-size: 200%;
-  }
 
   .card {
     height: 500px;
