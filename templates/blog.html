@@ -10,9 +10,9 @@
             <div class="col-3 border p-3">
                 {% if "placeholder" in post.featured_image.url %}
                 <img class="img-fluid"
-                    src="https://i1.wp.com/www.fskabracknell.co.uk/wp-content/uploads/2015/06/funakoshi-1-1-1.jpg?fit=913%2C1024">
+                    src="https://i1.wp.com/www.fskabracknell.co.uk/wp-content/uploads/2015/06/funakoshi-1-1-1.jpg?fit=913%2C1024" alt="post-img">
                 {% else %}
-                <img class="img-fluid" src=" {{ post.featured_image.url }}">
+                <img class="img-fluid" src=" {{ post.featured_image.url }}" alt="user-img">
                 {% endif %}
             </div>
             <div class="col-md-8">

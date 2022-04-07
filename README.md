@@ -19,6 +19,20 @@ Funakoshi Club is a very friendly website for all people who practise Shotokan K
   - [Acknowledgement](#acknowledgement)
 
 ## User Stores
+  - As a Site Admin I can create, create, update and delete post so that I can manage my blog content.
+  - As a Site Admin I can create draft posts so that I can finish writing the content later.
+  - As a Site Admin I can approve and disapprove comments so that I can filter out objectionable comments.
+  - As a Site User I can view a paginated list of topics so that I can easily choose the topic what I am    interesting in.
+  - As a site User I can leave comments on a post so that I can be involved in the conversation.
+  - As a Site User I can register an account so that I can comment and like.
+  - As a Site User I can view a list of posts so that I can select one to read.
+  - As a Site User I can read a history article so that I can get more info about this sport.
+  - As a Site User I can like or unlike post so that I can interact with the comment.
+  - As a Site User / Admin I can view the numbers of likes on each post so that I can see which is the most viral.
+  - As a Site User / Admin I can view comments on an individual post so that I can read the conversation.
+  - As a Site User I can understand what is this site about so that I can see if this is what I am looking for.
+  - As a Site User I can find a list of related books so that I can find them and read more info about martial technic and history.
+  - As a Site User I can edit and delete my comments so that I can manage my comments by editing or deleting it.
 
 ## Features
 
@@ -49,11 +63,6 @@ Funakoshi Club is a very friendly website for all people who practise Shotokan K
  ![Comments](media/leave-comments.png)
 
  On this page is the post details created by Admin, all the comments left by different users and a section to leave your comment.
-
-
-
-
-
 
 
 ## Technologies Used
